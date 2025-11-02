@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "movieId": 1,
+    "userName": "John Doe",
+    "rating": 5,
+    "reviewText": "An absolute masterpiece! The action sequences are mind-bending and the philosophical themes are thought-provoking.",
+    "createdAt": "2025-10-19T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "movieId": 1,
+    "userName": "Jane Smith",
+    "rating": 4,
+    "reviewText": "Great movie with excellent cinematography. Some parts felt a bit slow but overall very entertaining.",
+    "createdAt": "2025-10-18T14:22:00Z"
+  },
+  {
+    "id": 3,
+    "movieId": 2,
+    "userName": "Mike Johnson",
+    "rating": 5,
+    "reviewText": "Inception is a brilliant film that keeps you thinking long after it ends. Nolan's direction is impeccable.",
+    "createdAt": "2025-10-17T09:15:00Z"
+  },
+  {
+    "id": 4,
+    "movieId": 2,
+    "userName": "Sarah Williams",
+    "rating": 4,
+    "reviewText": "Complex plot that requires attention but rewarding. The dream sequences are visually stunning.",
+    "createdAt": "2025-10-16T16:45:00Z"
+  },
+  {
+    "id": 5,
+    "movieId": 3,
+    "userName": "Tom Brown",
+    "rating": 5,
+    "reviewText": "Heath Ledger's performance as the Joker is legendary. This is the best Batman movie ever made.",
+    "createdAt": "2025-10-15T11:20:00Z"
+  },
+  {
+    "id": 6,
+    "movieId": 3,
+    "userName": "Emily Davis",
+    "rating": 5,
+    "reviewText": "Absolutely incredible. The tension, the acting, the cinematography - everything is perfect.",
+    "createdAt": "2025-10-14T13:50:00Z"
+  },
+  {
+    "id": 7,
+    "movieId": 3,
+    "userName": "Chris Wilson",
+    "rating": 5,
+    "reviewText": "A masterpiece of modern cinema. Nolan created something truly special with this film.",
+    "createdAt": "2025-10-13T08:30:00Z"
+  },
+  {
+    "id": 8,
+    "movieId": 4,
+    "userName": "Lisa Anderson",
+    "rating": 5,
+    "reviewText": "Interstellar is breathtaking. The scope, the emotion, the science - it all comes together beautifully.",
+    "createdAt": "2025-10-12T15:10:00Z"
+  },
+  {
+    "id": 9,
+    "movieId": 7,
+    "userName": "Robert Taylor",
+    "rating": 5,
+    "reviewText": "The Shawshank Redemption is the greatest film ever made. A true masterpiece.",
+    "createdAt": "2025-10-11T10:00:00Z"
+  },
+  {
+    "id": 10,
+    "movieId": 7,
+    "userName": "Patricia Martinez",
+    "rating": 5,
+    "reviewText": "Powerful, moving, and unforgettable. This movie stays with you forever.",
+    "createdAt": "2025-10-10T12:30:00Z"
+  }
+]
