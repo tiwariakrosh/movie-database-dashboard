@@ -86,7 +86,6 @@ export default function DashboardPage() {
             onGenreChange={handleGenreChange}
             onSortChange={handleSortChange}
             onPageSizeChange={handlePageSizeChange}
-            genres={[]}
           />
 
           {loading ? (
