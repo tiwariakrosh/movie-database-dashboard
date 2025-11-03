@@ -38,7 +38,47 @@ cp .env.local.example .env.local
 npm run dev
 ```
 
-Open http://localhost:3000 in your browser
+Open [http://localhost:3000](http://localhost:3000) in your browser
+
+# Deployment Guide
+
+## Vercel Deployment
+
+This application is optimized for deployment on Vercel. Follow these steps to deploy:
+
+### Prerequisites
+
+- GitHub account with the repository pushed
+- Vercel account (free tier available)
+
+### Step 1: Connect GitHub Repository
+
+1. Go to [vercel.com](https://vercel.com)
+2. Click "New Project"
+3. Select "Import Git Repository"
+4. Connect your GitHub account and select the movie-dashboard repository
+5. Click "Import"
+
+### Step 2: Configure Environment Variables
+
+1. In the Vercel project settings, go to "Environment Variables"
+2. Add the following variable:
+
+   - **Name**: `ADMIN_PASSWORD`
+   - **Value**: Your secure admin password (not `admin123`)
+   - **Environments**: Production, Preview, Development
+
+3. Click "Save"
+
+### Step 3: Deploy
+
+1. Click "Deploy"
+2. Wait for the build to complete
+3. Your application will be live at the provided URL
+
+### Step 4: Automatic Deployments
+
+Once connected, every push to the `main` branch will automatically trigger a new deployment.
 
 ## API Endpoints
 
