@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Star } from "lucide-react";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import type { Movie } from "@/lib/types";
 
 interface MovieCardProps {
@@ -11,7 +12,7 @@ interface MovieCardProps {
 export function MovieCard({ movie }: MovieCardProps) {
   return (
     <Link href={`/movies/${movie.id}`}>
-      <div className="h-full overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+      <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
         <div className="relative w-full h-64 bg-muted overflow-hidden">
           <img
             src={movie.posterUrl || "/placeholder.svg"}
@@ -19,7 +20,7 @@ export function MovieCard({ movie }: MovieCardProps) {
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
           />
         </div>
-        <div className="p-4">
+        <CardContent className="p-4">
           <h3 className="font-semibold text-lg line-clamp-2 mb-2">
             {movie.title}
           </h3>
@@ -42,12 +43,12 @@ export function MovieCard({ movie }: MovieCardProps) {
               </span>
             ))}
           </div>
-        </div>
-        <div className="p-4 pt-0 text-xs text-muted-foreground">
+        </CardContent>
+        <CardFooter className="p-4 pt-0 text-xs text-muted-foreground">
           {movie.reviewCount} reviews • {movie.averageReviewRating.toFixed(1)}{" "}
           avg
-        </div>
-      </div>
+        </CardFooter>
+      </Card>
     </Link>
   );
 }
