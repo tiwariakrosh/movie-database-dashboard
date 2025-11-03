@@ -71,6 +71,7 @@ export function ReviewForm({ movieId, onReviewSubmitted }: ReviewFormProps) {
               placeholder="Enter your name"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
+              required
               disabled={loading}
             />
           </div>
@@ -90,6 +91,7 @@ export function ReviewForm({ movieId, onReviewSubmitted }: ReviewFormProps) {
             <Textarea
               placeholder="Share your thoughts about this movie..."
               value={reviewText}
+              required
               onChange={(e) => setReviewText(e.target.value)}
               disabled={loading}
               rows={4}

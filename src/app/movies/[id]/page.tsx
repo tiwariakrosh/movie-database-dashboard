@@ -96,8 +96,8 @@ export default function MovieDetailPage({
                   src={movie.posterUrl || "/placeholder.svg"}
                   alt={movie.title}
                   width={400}
-                  height={600}
-                  className="rounded-2xl shadow-lg object-cover"
+                  height={500}
+                  className="rounded-2xl shadow-lg object-cover w-full h-full max-h-[500px]"
                   unoptimized
                 />
               </div>

@@ -17,7 +17,7 @@ export function MovieCard({ movie }: MovieCardProps) {
       <Card
         className="
           group relative h-full overflow-hidden rounded-2xl border border-border/50 
-          bg-gradient-to-br from-background via-background/95 to-muted/40 
+          bg-linear-to-br from-background via-background/95 to-muted/40 
           shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer
           p-0
         "
