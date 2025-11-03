@@ -66,8 +66,49 @@ export function DashboardFilters({
 
   return (
     <div className="space-y-4 mb-6">
-      <div className="flex gap-2">
-        <div className="flex-1 relative">
+      <div className="flex flex-col-reverse md:flex-row justify-between gap-3">
+        <div className="flex flex-wrap gap-2 w-full md:w-auto mb-2">
+          <Select onValueChange={onGenreChange}>
+            <SelectTrigger>
+              <SelectValue placeholder="All Genres" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Genres</SelectItem>
+              {GENRES.map((genre) => (
+                <SelectItem key={genre} value={genre}>
+                  {genre}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+
+          <Select onValueChange={handleSortChange}>
+            <SelectTrigger>
+              <SelectValue placeholder="Sort by" />
+            </SelectTrigger>
+            <SelectContent>
+              {SORT_OPTIONS.map((option) => (
+                <SelectItem key={option.value} value={option.value}>
+                  {option.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+
+          <Select
+            onValueChange={(value) => onPageSizeChange(Number.parseInt(value))}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Items per page" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="10">10 per page</SelectItem>
+              <SelectItem value="20">20 per page</SelectItem>
+              <SelectItem value="50">50 per page</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="flex-1 relative w-full h-fit md:w-auto max-w-[400px]">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input
             placeholder="Search movies, directors, cast..."
@@ -75,52 +116,6 @@ export function DashboardFilters({
             onChange={(e) => onSearchChange(e.target.value)}
           />
         </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
-        <Select onValueChange={onGenreChange}>
-          <SelectTrigger>
-            <SelectValue placeholder="All Genres" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All Genres</SelectItem>
-            {GENRES.map((genre) => (
-              <SelectItem key={genre} value={genre}>
-                {genre}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-
-        <Select onValueChange={handleSortChange}>
-          <SelectTrigger>
-            <SelectValue placeholder="Sort by" />
-          </SelectTrigger>
-          <SelectContent>
-            {SORT_OPTIONS.map((option) => (
-              <SelectItem key={option.value} value={option.value}>
-                {option.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-
-        <Select
-          onValueChange={(value) => onPageSizeChange(Number.parseInt(value))}
-        >
-          <SelectTrigger>
-            <SelectValue placeholder="Items per page" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="10">10 per page</SelectItem>
-            <SelectItem value="20">20 per page</SelectItem>
-            <SelectItem value="50">50 per page</SelectItem>
-          </SelectContent>
-        </Select>
-
-        <Button variant="outline" className="w-full bg-transparent" asChild>
-          <a href="/admin">Admin Panel</a>
-        </Button>
       </div>
     </div>
   );

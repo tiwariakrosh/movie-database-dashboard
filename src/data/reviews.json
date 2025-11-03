@@ -78,5 +78,37 @@
     "rating": 5,
     "reviewText": "Powerful, moving, and unforgettable. This movie stays with you forever.",
     "createdAt": "2025-10-10T12:30:00Z"
+  },
+  {
+    "id": 11,
+    "movieId": 7,
+    "userName": "hari",
+    "rating": 5,
+    "reviewText": "test review",
+    "createdAt": "2025-11-03T07:40:02.850Z"
+  },
+  {
+    "id": 12,
+    "movieId": 7,
+    "userName": "Bishnu",
+    "rating": 4,
+    "reviewText": "Just like it",
+    "createdAt": "2025-11-03T07:40:48.886Z"
+  },
+  {
+    "id": 13,
+    "movieId": 8,
+    "userName": "Name",
+    "rating": 5,
+    "reviewText": "Hari",
+    "createdAt": "2025-11-03T07:45:48.727Z"
+  },
+  {
+    "id": 14,
+    "movieId": 8,
+    "userName": "ad",
+    "rating": 4,
+    "reviewText": "asdsd",
+    "createdAt": "2025-11-03T07:46:27.214Z"
   }
 ]
