@@ -35,7 +35,11 @@ export function MovieCard({ movie }: MovieCardProps) {
           />
           <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-black/70 backdrop-blur-sm px-2 py-1 text-xs text-white">
             <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-            <span>{movie.rating.toFixed(1)}</span>
+            <span>
+              {movie.averageReviewRating
+                ? movie.averageReviewRating.toFixed(1)
+                : movie.rating.toFixed(1)}
+            </span>
           </div>
         </div>
         <CardContent className="p-4 py-0">
@@ -58,7 +62,6 @@ export function MovieCard({ movie }: MovieCardProps) {
         </CardContent>
         <CardFooter className="p-4 pt-0 flex items-center justify-between text-xs text-muted-foreground border-t border-border/50">
           <span>{movie.reviewCount} reviews</span>
-          <span>{movie.averageReviewRating.toFixed(1)} avg</span>
         </CardFooter>
       </Card>
     </Link>

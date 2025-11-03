@@ -108,9 +108,17 @@ export default function MovieDetailPage({
                 <h1 className="text-4xl font-bold mb-2">{movie.title}</h1>
                 <div className="flex items-center gap-4 mb-4">
                   <div className="flex items-center gap-2">
-                    <StarRating rating={Math.round(movie.rating)} />
+                    <StarRating
+                      rating={Math.round(
+                        movie.averageReviewRating
+                          ? movie.averageReviewRating
+                          : movie.rating
+                      )}
+                    />
                     <span className="text-lg font-semibold">
-                      {movie.rating.toFixed(1)}
+                      {movie.averageReviewRating
+                        ? movie.averageReviewRating.toFixed(1)
+                        : movie.rating.toFixed(1)}
                     </span>
                   </div>
                   <span className="text-muted-foreground">{movie.year}</span>
