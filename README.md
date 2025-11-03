@@ -30,28 +30,15 @@ A modern, full-stack Next.js application serving as an internal movie database d
 
 ### Installation
 
-1. Clone the repository:
-   \`\`\`bash
-   git clone <repository-url>
-   cd movie-dashboard
-   \`\`\`
+```bash
+git clone <repo-url>
+cd movie-dashboard
+npm install
+cp .env.local.example .env.local
+npm run dev
+```
 
-2. Install dependencies:
-   \`\`\`bash
-   npm install
-   \`\`\`
-
-3. Set up environment variables:
-   \`\`\`bash
-   cp .env.local.example .env.local
-   \`\`\`
-
-4. Run the development server:
-   \`\`\`bash
-   npm run dev
-   \`\`\`
-
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+Open http://localhost:3000 in your browser
 
 ## API Endpoints
 
@@ -178,39 +165,6 @@ The CSV export includes the following columns:
 - Review Count
 - Average Rating
 
-## Deployment
-
-### Vercel Deployment
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Set environment variables in Vercel dashboard:
-   - `ADMIN_PASSWORD` - Your admin password
-4. Deploy
-
-The application will automatically deploy on every push to the main branch.
-
-## Development
-
-### Running Tests
-
-\`\`\`bash
-npm run test
-\`\`\`
-
-### Building for Production
-
-\`\`\`bash
-npm run build
-npm start
-\`\`\`
-
-### Code Quality
-
-\`\`\`bash
-npm run lint
-\`\`\`
-
 ## Sample Data
 
 The application comes with 20 sample movies and 10 sample reviews. You can:
@@ -233,10 +187,3 @@ The application comes with 20 sample movies and 10 sample reviews. You can:
 - Client-side filtering and sorting
 - Responsive images with proper sizing
 - Optimized bundle with Next.js
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
