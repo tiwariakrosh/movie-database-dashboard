@@ -4,9 +4,10 @@ import { useState, useEffect, useCallback } from "react";
 import { Loader2 } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-
 import { MovieCard } from "@/components/movie-card";
-import { Movie, PaginatedResponse } from "@/lib/types";
+import type { Movie, PaginatedResponse } from "@/lib/types";
+import { DashboardFilters } from "@/components/dashboard-filters";
+import { Pagination } from "@/components/pagination";
 
 export default function DashboardPage() {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -47,6 +48,27 @@ export default function DashboardPage() {
     fetchMovies();
   }, [fetchMovies]);
 
+  const handleSearchChange = (value: string) => {
+    setSearch(value);
+    setPage(1);
+  };
+
+  const handleGenreChange = (value: string) => {
+    setGenre(value === "all" ? "" : value);
+    setPage(1);
+  };
+
+  const handleSortChange = (newSortBy: string, newSortOrder: string) => {
+    setSortBy(newSortBy);
+    setSortOrder(newSortOrder);
+    setPage(1);
+  };
+
+  const handlePageSizeChange = (newPageSize: number) => {
+    setPageSize(newPageSize);
+    setPage(1);
+  };
+
   return (
     <>
       <Header />
@@ -58,6 +80,14 @@ export default function DashboardPage() {
               Browse and discover movies from our collection
             </p>
           </div>
+
+          <DashboardFilters
+            onSearchChange={handleSearchChange}
+            onGenreChange={handleGenreChange}
+            onSortChange={handleSortChange}
+            onPageSizeChange={handlePageSizeChange}
+            genres={[]}
+          />
 
           {loading ? (
             <div className="flex items-center justify-center py-12">
@@ -76,6 +106,12 @@ export default function DashboardPage() {
                   <MovieCard key={movie.id} movie={movie} />
                 ))}
               </div>
+
+              <Pagination
+                currentPage={page}
+                totalPages={totalPages}
+                onPageChange={setPage}
+              />
             </>
           )}
         </div>

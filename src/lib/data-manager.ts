@@ -1,59 +1,110 @@
-import type { Movie, Review } from "./types"
+import type { Movie, Review } from "./types";
+import { readFile, writeFile } from 'fs/promises';
+import path from 'path';
 
-let moviesCache: Movie[] | null = null
-let reviewsCache: Review[] | null = null
+let moviesCache: Movie[] | null = null;
+let reviewsCache: Review[] | null = null;
+
+const getFilePath = (filename: string) =>
+  path.join(process.cwd(), 'src', 'data', filename);
 
 export async function readMovies(): Promise<Movie[]> {
+  if (moviesCache) return moviesCache;
+
   try {
-    if (moviesCache) {
-      return moviesCache
+    const filePath = getFilePath('movies.json');
+    const json = await readFile(filePath, 'utf-8');
+    const data = JSON.parse(json) as Movie[];
+
+    if (!Array.isArray(data)) {
+      throw new Error('movies.json is not a valid array');
     }
-    const response = await fetch(new URL("../data/movies.json", import.meta.url))
-    const data = await response.json()
-    moviesCache = data
-    return data
+
+    moviesCache = data;
+    return data;
   } catch (error) {
-    console.error("Error reading movies:", error)
-    return []
+    console.error('Error reading movies.json:', error);
+    return [];
   }
 }
 
 export async function readReviews(): Promise<Review[]> {
+  if (reviewsCache) return reviewsCache;
+
   try {
-    if (reviewsCache) {
-      return reviewsCache
+    const filePath = getFilePath('reviews.json');
+    const json = await readFile(filePath, 'utf-8');
+    const data = JSON.parse(json) as Review[];
+
+    if (!Array.isArray(data)) {
+      throw new Error('reviews.json is not a valid array');
     }
-    const response = await fetch(new URL("../data/reviews.json", import.meta.url))
-    const data = await response.json()
-    reviewsCache = data
-    return data
-  } catch (error) {
-    console.error("Error reading reviews:", error)
-    return []
+
+    reviewsCache = data;
+    return data;
+  } catch (error: any) {
+    if (error?.code !== 'ENOENT') {
+      console.error('Error reading reviews.json:', error);
+    }
+    return [];
   }
 }
 
-export function writeMovies(movies: Movie[]): void {
+export async function writeMovies(movies: Movie[]): Promise<void> {
   try {
-    moviesCache = movies  } catch (error) {
-    console.error("Error writing movies:", error)
+    moviesCache = movies;
+
+    const filePath = getFilePath('movies.json');
+    const json = JSON.stringify(movies, null, 2);
+    await writeFile(filePath, json, 'utf-8');
+
+    console.log('movies.json updated on disk');
+  } catch (error) {
+    console.error('Error writing movies.json:', error);
+    throw error; 
   }
 }
 
-export function writeReviews(reviews: Review[]): void {
+export async function writeReviews(reviews: Review[]): Promise<void> {
   try {
-    reviewsCache = reviews
+    reviewsCache = reviews;
+
+    const filePath = getFilePath('reviews.json');
+    const json = JSON.stringify(reviews, null, 2);
+    await writeFile(filePath, json, 'utf-8');
+
+    console.log('reviews.json updated on disk');
   } catch (error) {
-    console.error("Error writing reviews:", error)
+    console.error('Error writing reviews.json:', error);
+    throw error;
   }
 }
 
 export async function getNextMovieId(): Promise<number> {
-  const movies = await readMovies()
-  return movies.length > 0 ? Math.max(...movies.map((m) => m.id)) + 1 : 1
+  try {
+    const movies = await readMovies();
+    return movies.length > 0
+      ? Math.max(...movies.map(m => m.id)) + 1
+      : 1;
+  } catch (error) {
+    console.error('Error calculating next movie ID:', error);
+    return 1;
+  }
 }
 
 export async function getNextReviewId(): Promise<number> {
-  const reviews = await readReviews()
-  return reviews.length > 0 ? Math.max(...reviews.map((r) => r.id)) + 1 : 1
+  try {
+    const reviews = await readReviews();
+    return reviews.length > 0
+      ? Math.max(...reviews.map(r => r.id)) + 1
+      : 1;
+  } catch (error) {
+    console.error('Error calculating next review ID:', error);
+    return 1;
+  }
+}
+
+export function clearCache() {
+  moviesCache = null;
+  reviewsCache = null;
 }
