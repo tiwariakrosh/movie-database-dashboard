@@ -7,15 +7,25 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import type { Movie, PaginatedResponse } from "@/lib/types";
 import { AdminLogin } from "@/components/login";
-import { MovieAddForm } from "@/components/movie-add-form";
+import { MovieModalForm } from "@/components/movie-add-form";
 import { MoviesTable } from "@/components/movie-table";
 
 export default function AdminPage() {
   const [token, setToken] = useState<string | null>(null);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const [editingMovie, setEditingMovie] = useState<Movie | null>(null);
-  const [showForm, setShowForm] = useState(false);
+
+  const openModal = (movie?: Movie) => {
+    setEditingMovie(movie || null);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setEditingMovie(null);
+  };
 
   useEffect(() => {
     const savedToken = localStorage.getItem("adminToken");
@@ -47,7 +57,6 @@ export default function AdminPage() {
     localStorage.removeItem("adminToken");
     setToken(null);
     setEditingMovie(null);
-    setShowForm(false);
   };
 
   if (!token) {
@@ -73,55 +82,50 @@ export default function AdminPage() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-1">
-              {(showForm || editingMovie) && (
-                <MovieAddForm
-                  movie={editingMovie || undefined}
-                  token={token}
-                  onSubmitSuccess={() => {
-                    fetchMovies();
-                    setShowForm(false);
-                    setEditingMovie(null);
-                  }}
-                  onCancel={() => {
-                    setShowForm(false);
-                    setEditingMovie(null);
-                  }}
-                />
-              )}
-
-              {!showForm && !editingMovie && (
-                <Button
-                  onClick={() => setShowForm(true)}
-                  className="w-full"
-                  size="lg"
-                >
-                  Add New Movie
-                </Button>
-              )}
-            </div>
-
+          <div className="grid grid-cols-1 gap-8">
             <div className="lg:col-span-2">
               {loading ? (
                 <div className="flex items-center justify-center py-12">
                   <Loader2 className="w-8 h-8 animate-spin text-primary" />
                 </div>
               ) : (
-                <MoviesTable
-                  movies={movies}
-                  token={token}
-                  onEdit={(movie) => {
-                    setEditingMovie(movie);
-                    setShowForm(false);
-                  }}
-                  onMovieDeleted={fetchMovies}
-                />
+                <div className="flex w-full flex-col gap-4">
+                  <div className="flex items-center">
+                    <h3 className="text-2xl font-semibold">
+                      List of All Movies
+                    </h3>
+                    <Button
+                      onClick={() => openModal()}
+                      className="w-fit ml-auto"
+                      size="lg"
+                    >
+                      Add New Movie
+                    </Button>
+                  </div>
+                  <MoviesTable
+                    movies={movies}
+                    token={token}
+                    onEdit={(movie) => openModal(movie)}
+                    onMovieDeleted={fetchMovies}
+                  />
+                </div>
               )}
             </div>
           </div>
         </div>
       </main>
+
+      <MovieModalForm
+        movie={editingMovie || undefined}
+        token={token}
+        open={modalOpen}
+        onOpenChange={closeModal}
+        onSubmitSuccess={() => {
+          fetchMovies();
+          closeModal();
+        }}
+      />
+
       <Footer />
     </>
   );

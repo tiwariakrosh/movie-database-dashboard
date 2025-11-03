@@ -33,8 +33,6 @@ export async function GET(request: NextRequest) {
     })
 
     const csv = generateCSV(movies)
-    console.log("🚀 ~ GET ~ csv:", csv)
-
     return new NextResponse(csv, {
       headers: {
         "Content-Type": "text/csv",

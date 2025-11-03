@@ -92,6 +92,7 @@ A modern, full-stack Next.js application serving as an internal movie database d
 ### Environment Variables
 
 Create a `.env.local` file:
+Copy `.env.local.example` to `.env.local` and set ADMIN_PASSWORD
 
 \`\`\`env
 
@@ -239,23 +240,3 @@ The application comes with 20 sample movies and 10 sample reviews. You can:
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
-
-## License
-
-MIT
-
-## Support
-
-For issues or questions, please open an issue in the repository.
-
-## Future Enhancements
-
-- User authentication system
-- Database integration (PostgreSQL/MongoDB)
-- Advanced search with filters
-- Movie recommendations
-- User watchlist
-- Social features (likes, follows)
-- Admin analytics dashboard
-- Email notifications
-- API rate limiting

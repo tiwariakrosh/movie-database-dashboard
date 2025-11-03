@@ -83,26 +83,6 @@
     "averageReviewRating": 4.3
   },
   {
-    "id": 18,
-    "title": "Fight Club",
-    "year": 1999,
-    "genre": [
-      "Drama"
-    ],
-    "rating": 8.8,
-    "director": "David Fincher",
-    "runtime": 139,
-    "synopsis": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into much more.",
-    "cast": [
-      "Brad Pitt",
-      "Edward Norton",
-      "Helena Bonham Carter"
-    ],
-    "posterUrl": "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=400&h=600&fit=crop",
-    "reviewCount": 11,
-    "averageReviewRating": 4.6
-  },
-  {
     "id": 6,
     "title": "Forrest Gump",
     "year": 1994,
@@ -124,24 +104,23 @@
     "averageReviewRating": 4.7
   },
   {
-    "id": 2,
-    "title": "Inception",
-    "year": 2010,
+    "id": 18,
+    "title": "Fight Club",
+    "year": 1999,
     "genre": [
-      "Sci-Fi",
-      "Thriller"
+      "Drama"
     ],
-    "rating": 3.8,
-    "director": "Christopher Nolan",
-    "runtime": 148,
-    "synopsis": "A skilled thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea.",
+    "rating": 8.8,
+    "director": "David Fincher",
+    "runtime": 139,
+    "synopsis": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into much more.",
     "cast": [
-      "Leonardo DiCaprio",
-      "Marion Cotillard",
-      "Ellen Page"
+      "Brad Pitt",
+      "Edward Norton",
+      "Helena Bonham Carter"
     ],
-    "posterUrl": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=600&fit=crop",
-    "reviewCount": 8,
+    "posterUrl": "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=400&h=600&fit=crop",
+    "reviewCount": 11,
     "averageReviewRating": 4.6
   },
   {
@@ -166,48 +145,25 @@
     "averageReviewRating": 4.4
   },
   {
-    "id": 20,
-    "title": "Se7en",
-    "year": 1995,
+    "id": 4,
+    "title": "Interstellar",
+    "year": 2014,
     "genre": [
-      "Crime",
-      "Drama",
-      "Mystery"
+      "Sci-Fi",
+      "Drama"
     ],
     "rating": 8.6,
-    "director": "David Fincher",
-    "runtime": 127,
-    "synopsis": "Two detectives hunt a serial killer who uses the seven deadly sins as his motives.",
+    "director": "Christopher Nolan",
+    "runtime": 169,
+    "synopsis": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
     "cast": [
-      "Brad Pitt",
-      "Morgan Freeman",
-      "Kevin Spacey"
+      "Matthew McConaughey",
+      "Anne Hathaway",
+      "Jessica Chastain"
     ],
-    "posterUrl": "https://images.unsplash.com/photo-1533613220915-609f21a91335?w=400&h=600&fit=crop",
+    "posterUrl": "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=600&fit=crop",
     "reviewCount": 10,
-    "averageReviewRating": 4.8
-  },
-  {
-    "id": 19,
-    "title": "The Green Mile",
-    "year": 1999,
-    "genre": [
-      "Crime",
-      "Drama",
-      "Fantasy"
-    ],
-    "rating": 8.6,
-    "director": "Frank Darabont",
-    "runtime": 189,
-    "synopsis": "The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape.",
-    "cast": [
-      "Tom Hanks",
-      "Michael Clarke Duncan",
-      "David Morse"
-    ],
-    "posterUrl": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=600&fit=crop",
-    "reviewCount": 8,
-    "averageReviewRating": 4.7
+    "averageReviewRating": 4.5
   },
   {
     "id": 14,
@@ -232,47 +188,70 @@
     "averageReviewRating": 4.7
   },
   {
-    "id": 4,
-    "title": "Interstellar",
-    "year": 2014,
+    "id": 19,
+    "title": "The Green Mile",
+    "year": 1999,
     "genre": [
-      "Sci-Fi",
-      "Drama"
+      "Crime",
+      "Drama",
+      "Fantasy"
     ],
     "rating": 8.6,
-    "director": "Christopher Nolan",
-    "runtime": 169,
-    "synopsis": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "director": "Frank Darabont",
+    "runtime": 189,
+    "synopsis": "The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape.",
     "cast": [
-      "Matthew McConaughey",
-      "Anne Hathaway",
-      "Jessica Chastain"
+      "Tom Hanks",
+      "Michael Clarke Duncan",
+      "David Morse"
     ],
-    "posterUrl": "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=600&fit=crop",
-    "reviewCount": 10,
-    "averageReviewRating": 4.5
+    "posterUrl": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=600&fit=crop",
+    "reviewCount": 8,
+    "averageReviewRating": 4.7
   },
   {
-    "id": 17,
-    "title": "The Prestige",
-    "year": 2006,
+    "id": 20,
+    "title": "Se7en",
+    "year": 1995,
     "genre": [
+      "Crime",
       "Drama",
-      "Mystery",
-      "Sci-Fi"
+      "Mystery"
     ],
-    "rating": 8.5,
-    "director": "Christopher Nolan",
-    "runtime": 130,
-    "synopsis": "After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion.",
+    "rating": 8.6,
+    "director": "David Fincher",
+    "runtime": 127,
+    "synopsis": "Two detectives hunt a serial killer who uses the seven deadly sins as his motives.",
     "cast": [
-      "Christian Bale",
-      "Hugh Jackman",
-      "Michael Caine"
+      "Brad Pitt",
+      "Morgan Freeman",
+      "Kevin Spacey"
     ],
     "posterUrl": "https://images.unsplash.com/photo-1533613220915-609f21a91335?w=400&h=600&fit=crop",
-    "reviewCount": 6,
-    "averageReviewRating": 4.5
+    "reviewCount": 10,
+    "averageReviewRating": 4.8
+  },
+  {
+    "id": 10,
+    "title": "The Lion King",
+    "year": 1994,
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Drama"
+    ],
+    "rating": 8.5,
+    "director": "Roger Allers, Rob Minkoff",
+    "runtime": 88,
+    "synopsis": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+    "cast": [
+      "James Earl Jones",
+      "Jeremy Irons",
+      "Matthew Broderick"
+    ],
+    "posterUrl": "https://images.unsplash.com/photo-1489599849228-ed4dc59b2e9f?w=400&h=600&fit=crop",
+    "reviewCount": 8,
+    "averageReviewRating": 4.6
   },
   {
     "id": 13,
@@ -297,26 +276,26 @@
     "averageReviewRating": 4.5
   },
   {
-    "id": 10,
-    "title": "The Lion King",
-    "year": 1994,
+    "id": 17,
+    "title": "The Prestige",
+    "year": 2006,
     "genre": [
-      "Animation",
-      "Adventure",
-      "Drama"
+      "Drama",
+      "Mystery",
+      "Sci-Fi"
     ],
     "rating": 8.5,
-    "director": "Roger Allers, Rob Minkoff",
-    "runtime": 88,
-    "synopsis": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+    "director": "Christopher Nolan",
+    "runtime": 130,
+    "synopsis": "After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion.",
     "cast": [
-      "James Earl Jones",
-      "Jeremy Irons",
-      "Matthew Broderick"
+      "Christian Bale",
+      "Hugh Jackman",
+      "Michael Caine"
     ],
-    "posterUrl": "https://images.unsplash.com/photo-1489599849228-ed4dc59b2e9f?w=400&h=600&fit=crop",
-    "reviewCount": 8,
-    "averageReviewRating": 4.6
+    "posterUrl": "https://images.unsplash.com/photo-1533613220915-609f21a91335?w=400&h=600&fit=crop",
+    "reviewCount": 6,
+    "averageReviewRating": 4.5
   },
   {
     "id": 9,
@@ -385,6 +364,26 @@
     "averageReviewRating": 4.3
   },
   {
+    "id": 11,
+    "title": "Titanic",
+    "year": 1997,
+    "genre": [
+      "Drama",
+      "Romance"
+    ],
+    "rating": 7.8,
+    "director": "James Cameron",
+    "runtime": 194,
+    "synopsis": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Kate Winslet"
+    ],
+    "posterUrl": "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=600&fit=crop",
+    "reviewCount": 5,
+    "averageReviewRating": 4.2
+  },
+  {
     "id": 12,
     "title": "Avatar",
     "year": 2009,
@@ -407,23 +406,24 @@
     "averageReviewRating": 4.3
   },
   {
-    "id": 11,
-    "title": "Titanic",
-    "year": 1997,
+    "id": 2,
+    "title": "Inception",
+    "year": 2010,
     "genre": [
-      "Drama",
-      "Romance"
+      "Sci-Fi",
+      "Thriller"
     ],
-    "rating": 7.8,
-    "director": "James Cameron",
-    "runtime": 194,
-    "synopsis": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+    "rating": 3.8,
+    "director": "Christopher Nolan",
+    "runtime": 148,
+    "synopsis": "A skilled thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea.",
     "cast": [
       "Leonardo DiCaprio",
-      "Kate Winslet"
+      "Marion Cotillard",
+      "Ellen Page"
     ],
-    "posterUrl": "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=600&fit=crop",
-    "reviewCount": 5,
-    "averageReviewRating": 4.2
+    "posterUrl": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=600&fit=crop",
+    "reviewCount": 8,
+    "averageReviewRating": 4.6
   }
 ]
