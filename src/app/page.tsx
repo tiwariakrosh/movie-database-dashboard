@@ -48,9 +48,14 @@ export default function DashboardPage() {
     fetchMovies();
   }, [fetchMovies]);
 
+  useEffect(() => {
+    if (search) {
+      setPage(1);
+    }
+  }, [search]);
+
   const handleSearchChange = (value: string) => {
     setSearch(value);
-    setPage(1);
   };
 
   const handleGenreChange = (value: string) => {
